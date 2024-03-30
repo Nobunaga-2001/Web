@@ -1,126 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrolling Page</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Page</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
 
-    .container {
-      display: flex;
-      margin: 0;
-    }
+      .container {
+        display: flex;
+        margin: 0;
+      }
 
-    .sidebar {
-      width: 250px;
-      background-color: #000000;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      position: fixed; 
-      top: 10px;
-      bottom: 10px;
-    }
+      .sidebar {
+        width: 180px;
+        background-color: #000000;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        position: fixed; 
+        top: 10px;
+        bottom: 10px;
+      }
+      .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px; /* Adjust margin as needed */
+      }
 
-    .logo img {
-      width: 150px;
-    }
+      .logo img {
+        width: 120px;
+      }
 
-    .navigation ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 50%;
-      font-size: 1.5em;
-    }
+      .navigation ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 50%;
+        font-size: 1.7em;
+        text-align: center;
+      }
 
-    .navigation ul li {
-      margin-bottom: 40px;
-    }
+      .navigation ul li {
+        margin-bottom: 40px;
+      }
 
-    .navigation ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
+      .navigation ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center; /* Align the text and the logo */
+        transition: all 0.3s ease; 
+      }
 
-    .navigation ul li a:hover {
-      color: #ffcc00;
-      font-size: 2.0em;
-    }
+      .navigation ul li a:hover {
+        color: #ffcc00;
+      }
 
-    .content {
-      flex-grow: 1;
-      padding-left: 270px;
-      padding-top: 20px;
-    }
+      .navigation ul li img {
+        margin-right: 10px; /* Adjust spacing between logo and text */
+        width: 20px; /* Adjust the width of the logos */
+      }
 
-    .long-content {
-      min-height: 100vh;
-      padding: 20px;
-    }
+      .content {
+        flex-grow: 1;
+        padding-left: 100px;
+        padding-top: 0px;
+      }
 
-    .long-content h2 {
-      color: #333;
-    }
+      .long-content {
+        text-align: center;
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
 
-    .long-content p {
-      color: #666;
-    }
+      .long-content h2 {
+        color: #333;
+      }
 
-    .long-content.home {
-      background-color: #f0f0f0;
-    }
+      .long-content p {
+        color: #666;
+      }
 
-    .long-content.about {
-      background-color: #e0e0e0;
-    }
+      .long-content.home {
+        background-color: #f0f0f0;
+        min-height: 100vh;
+      }
 
-    .long-content.services {
-      background-color: #d0d0d0;
-    }
+      .long-content.about {
+        background-color: #e0e0e0;
+        min-height: 50vh;
+      }
 
-    .long-content.contact {
-      background-color: #c0c0c0;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="logo">
-        <img src="logo2.jpg" alt="Logo">
+      .long-content.services {
+        background-color: #d0d0d0;
+        min-height: 150vh;
+      }
+
+      .long-content.contact {
+        background-color: #c0c0c0;
+        min-height: 20vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="./graphics/logo2.jpg" alt="Logo">
+        </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="#home"><img src="./graphics/icons8-home-50.png" alt="Logo 1"> Home</a></li>
+            <li><a href="#about"><img src="./graphics/icons8-about-50.png" alt="Logo 2"> About</a></li>
+            <li><a href="#services"><img src="./graphics/icons8-service-50.png" alt="Logo 3"> Services</a></li>
+            <li><a href="#contact"><img src="./graphics/icons8-contact-50.png" alt="Logo 4"> Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Contacout</a></li>
-        </ul>
-      </nav>
+      <div class="content">
+        <div class="long-content home" id="home">
+          <h2>Home</h2>
+          <p>This is the Home section content.</p>
+        </div>
+        <div class="long-content about" id="about">
+          <h2>About</h2>
+          <p>This is the About section content.</p>
+        </div>
+        <div class="long-content services" id="services">
+          <h2>Services</h2>
+          <p>This is the Services section content.</p>
+        </div>
+        <div class="long-content contact" id="contact">
+          <h2>Contact</h2>
+          <p>This is the Contact section content.</p>
+        </div>
+      </div>
     </div>
-    <div class="content">
-      <div class="long-content home" id="home">
-        <h2>Home</h2>
-        <p>This is the Home section content.</p>
-      </div>
-      <div class="long-content about" id="about">
-        <h2>About</h2>
-        <p>This is the About section content.</p>
-      </div>
-      <div class="long-content services" id="services">
-        <h2>Services</h2>
-        <p>This is the Services section content.</p>
-      </div>
-      <div class="long-content contact" id="contact">
-        <h2>Contact</h2>
-        <p>This is the Contact section content.</p>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
