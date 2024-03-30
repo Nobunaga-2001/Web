@@ -5,3 +5,10 @@ h1 {
     text-align: center; /* Center-align the text */
     /* Add any additional styles you desire */
   }
+  h2 {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #650ce9; /* Set the text color */
+    text-align: center; /* Center-align the text */
+    /* Add any additional styles you desire */
+  }
