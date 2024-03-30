@@ -1,13 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="inde.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      margin: 0;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      position: fixed; 
+      top: 10px;
+      bottom: 10px;
+    }
+
+    .logo img {
+      width: 150px;
+    }
+
+    .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 50%;
+      font-size: 1.5em;
+    }
+
+    .navigation ul li {
+      margin-bottom: 40px;
+    }
+
+    .navigation ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navigation ul li a:hover {
+      color: #ffcc00;
+      font-size: 2.0em;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding-left: 270px;
+      padding-top: 20px;
+    }
+
+    .long-content {
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .long-content h2 {
+      color: #333;
+    }
+
+    .long-content p {
+      color: #666;
+    }
+
+    .long-content.home {
+      background-color: #f0f0f0;
+    }
+
+    .long-content.about {
+      background-color: #e0e0e0;
+    }
+
+    .long-content.services {
+      background-color: #d0d0d0;
+    }
+
+    .long-content.contact {
+      background-color: #c0c0c0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello World 123</h1>
-    <h2>Why success if success is not responding</h2>
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="../assets/logo2.jpg" alt="Logo">
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="long-content home" id="home">
+        <h2>Home</h2>
+        <p>This is the Home section content.</p>
+      </div>
+      <div class="long-content about" id="about">
+        <h2>About</h2>
+        <p>This is the About section content.</p>
+      </div>
+      <div class="long-content services" id="services">
+        <h2>Services</h2>
+        <p>This is the Services section content.</p>
+      </div>
+      <div class="long-content contact" id="contact">
+        <h2>Contact</h2>
+        <p>This is the Contact section content.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
