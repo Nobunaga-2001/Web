@@ -106,18 +106,23 @@
       min-height: 20vh;
     }
 
-    /* Media Queries for responsiveness */
-    @media screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        position: static;
-        height: 500px;
-      }
-      .content {
-        padding-left: 0px;
-      }
+    /* Styles for the carousel */
+    .carousel {
+      width: 30px; /* Adjust width as needed */
+      height: 70px; /* Adjust height as needed */
+      overflow: hidden;
+      margin: auto; /* Center horizontally */
+    }
+
+    .carousel-content {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      width: 350px; /* Adjust width as needed */
+      height: 150px; /* Adjust height as needed */
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -144,6 +149,15 @@
       <div class="long-content about" id="about">
         <h2>About</h2>
         <p>This is the About section content.</p>
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel-content">
+            <div class="carousel-item" style="background-color: #ff5733;"></div>
+            <div class="carousel-item" style="background-color: #33ff57;"></div>
+            <div class="carousel-item" style="background-color: #5733ff;"></div>
+          </div>
+        </div>
+        <!-- End of Carousel -->
       </div>
       <div class="long-content services" id="services">
         <h2>Services</h2>
