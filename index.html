@@ -1,173 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practice Website</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-    }
-
-    .container {
-      display: flex;
-      margin: 0;
-    }
-
-    .sidebar {
-      width: 180px;
-      background-color: #000000;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      position: fixed; 
-      top: 10px;
-      bottom: 10px;
-    }
-
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px; /* Adjust margin as needed */
-    }
-
-    .logo img {
-      width: 120px;
-    }
-
-    .navigation ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 50%;
-      font-size: 1.7em;
-      text-align: center;
-    }
-
-    .navigation ul li {
-      margin-bottom: 40px;
-    }
-
-    .navigation ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center; /* Align the text and the logo */
-      transition: all 0.3s ease; 
-    }
-
-    .navigation ul li a:hover {
-      color: #ffcc00;
-    }
-
-    .navigation ul li img {
-      margin-right: 10px; /* Adjust spacing between logo and text */
-      width: 20px; /* Adjust the width of the logos */
-    }
-
-    .content {
-      flex-grow: 1;
-      padding-left: 100px;
-      padding-top: 0px;
-    }
-
-    .long-content {
-      text-align: center;
-      padding: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .long-content h2 {
-      color: #333;
-    }
-
-    .long-content p {
-      color: #666;
-    }
-
-    .long-content.home {
-      background-color: #f0f0f0;
-      min-height: 100vh;
-    }
-
-    .long-content.about {
-      background-color: #e0e0e0;
-      min-height: 50vh;
-    }
-
-    .long-content.services {
-      background-color: #d0d0d0;
-      min-height: 150vh;
-    }
-
-    .long-content.contact {
-      background-color: #c0c0c0;
-      min-height: 20vh;
-    }
-
-    /* Styles for the carousel */
-    .carousel {
-      width: 30px; /* Adjust width as needed */
-      height: 70px; /* Adjust height as needed */
-      overflow: hidden;
-      margin: auto; /* Center horizontally */
-    }
-
-    .carousel-content {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item {
-      width: 350px; /* Adjust width as needed */
-      height: 150px; /* Adjust height as needed */
-      flex-shrink: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management Tool</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="logo">
-        <img src="./graphics/logo2.jpg" alt="Logo">
-      </div>
-      <nav class="navigation">
-        <ul>
-          <li><a href="#home"><img src="./graphics/icons8-home-50.png" alt="Logo 1"> Home</a></li>
-          <li><a href="#about"><img src="./graphics/icons8-about-50.png" alt="Logo 2"> About</a></li>
-          <li><a href="#services"><img src="./graphics/icons8-service-50.png" alt="Logo 3"> Services</a></li>
-          <li><a href="#contact"><img src="./graphics/icons8-contact-50.png" alt="Logo 4"> Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="content">
-      <div class="long-content home" id="home">
-        <h2>Home</h2>
-        <p>This is the Home section content.</p>
-      </div>
-      <div class="long-content about" id="about">
-        <h2>About</h2>
-        <p>This is the About section content.</p>
-        <!-- Carousel -->
-        <div class="carousel">
-          <div class="carousel-content">
-            <div class="carousel-item" style="background-color: #ff5733;"></div>
-            <div class="carousel-item" style="background-color: #33ff57;"></div>
-            <div class="carousel-item" style="background-color: #5733ff;"></div>
-          </div>
+
+<body class="bg-gray-100">
+
+    <!-- Topbar -->
+    <div class="bg-blue-500 p-4">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="text-white font-semibold text-xl">Order Management Tool</div>
+                <div>
+                    <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md">Home</a>
+                    <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md">About</a>
+                    <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md">Contact</a>
+                </div>
+            </div>
         </div>
-        <!-- End of Carousel -->
-      </div>
-      <div class="long-content services" id="services">
-        <h2>Services</h2>
-        <p>This is the Services section content.</p>
-      </div>
-      <div class="long-content contact" id="contact">
-        <h2>Contact</h2>
-        <p>This is the Contact section content.</p>
-      </div>
     </div>
-  </div>
+
+    <!-- Content -->
+    <div class="container mx-auto mt-4">
+        <form id="orderForm" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="clientName" class="block text-gray-700">Client:</label>
+                <input type="text" id="clientName" name="clientName" required
+                    class="w-full px-3 py-2 mt-1 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="orderNumber" class="block text-gray-700">Order Number:</label>
+                <input type="text" id="orderNumber" name="orderNumber" required
+                    class="w-full px-3 py-2 mt-1 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="manufacturingStatus" class="block text-gray-700">Manufacturing Status:</label>
+                <select id="manufacturingStatus" name="manufacturingStatus"
+                    class="w-full px-3 py-2 mt-1 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+                    <option value="pending">Pending</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="fileUpload" class="block text-gray-700">Attachment:</label>
+                <input type="file" id="fileUpload" name="fileUpload" accept=".pdf"
+                    class="w-full px-3 py-2 mt-1 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <button type="button"
+                class="w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                onclick="saveOrder()">Save Order</button>
+        </form>
+
+        <div id="statusMsg" class="mt-4 text-center text-gray-700"></div>
+    </div>
+
+    <script src="indexScript.js"></script>
 </body>
+
 </html>
